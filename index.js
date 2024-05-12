@@ -1,6 +1,13 @@
 const express = require('express');
 const path = require('path');
 const handlebars = require('express-handlebars');
+const dotenv = require('dotenv');
+
+process.on('uncaughtException', (err) => {
+  console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
+  console.log(err.name, err.message);
+  process.exit(1);
+});
 
 const app = express();
 
@@ -19,6 +26,16 @@ app.get('/', (req, res) => {
   res.render('gardens-quote');
 });
 
-app.listen(3300, () => {
+const port = process.env.PORT || 7070;
+
+app.listen(port, () => {
   console.log('Server is running on port 3300...');
+});
+
+process.on('unhandledRejection', err => {
+  console.log('UNHANDLED REJECTION! 💥 Shutting down...');
+  console.log(err.name, err.message);
+  server.close(() => {
+    process.exit(1);
+  });
 });
