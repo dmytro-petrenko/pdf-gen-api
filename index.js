@@ -13,7 +13,7 @@ process.on('uncaughtException', (err) => {
 
 const app = express();
 
-const whitelist = ['https://www.glowevents.co.uk/', 'http://localhost:3000'];
+const whitelist = ['https://www.glowevents.co.uk', 'http://localhost:3000'];
 
 const corsOptionsDelegate = function (req, callback) {
   let corsOptions;
