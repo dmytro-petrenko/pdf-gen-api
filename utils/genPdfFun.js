@@ -1,17 +1,13 @@
 const puppeteer = require('puppeteer');
 require('dotenv').config();
 
-module.exports = async function genPdfFunc() {
+module.exports = async function genPdfFunc(html) {
   try {
-    // const browser = await puppeteer.launch({
-    //   args: ['--no-sandbox'],
-    //   headless: true,
-    // });
     const browser = await puppeteer.launch({
       args: [
         '--disable-setuid-sandbox',
         '--no-sandbox',
-        '--single-process',
+        // '--single-process',
         '--no-zygote',
       ],
       executablePath:
@@ -22,17 +18,20 @@ module.exports = async function genPdfFunc() {
     const page = await browser.newPage();
 
     await page.setContent(
-      '<html><body><h1 style="color:blue;font-size:46px;">Test</h1></body></html>',
+      // '<html><body><h1 style="color:blue;font-size:46px;">Test</h1></body></html>',
+      html,
       {
         waitUntil: 'domcontentloaded',
       }
     );
+    await page.addStyleTag({ path: './public/styles/fonts.css' });
+    await page.addStyleTag({ path: './public/styles/gardens_quote.css' });
 
-    // await page.emulateMediaType('screen');
+    await page.emulateMediaType('screen');
 
     const pdfBuffer = await page.pdf({
       format: 'A4',
-      margin: { top: '100px', right: '50px', bottom: '100px', left: '50px' },
+      margin: { top: '50px', right: '0px', bottom: '50px', left: '0px' },
       printBackground: true,
     });
 

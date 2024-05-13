@@ -1,11 +1,164 @@
-<html lang='en'>
-  <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Gardens Wedding Quote</title>
-  </head>
-  <body>
-    <h1>Gardens Wedding Quote template</h1>
-  </body>
+{{! <h1 class='title'>Gardens Wedding Quote template</h1> }}
 
-</html>
+<main class='layout__block'>
+  <div class='header__block'>
+    <image
+      class='header__logo_image'
+      {{! src='/images/the gardens logo.png' }}
+      src='/images/the gardens logo.png'
+      alt='The gardens logo'
+    />
+    <div class='header__text_block'>
+      <div class='header_text_wrap_block'>
+        <h5 class='header__text_capitals'>Prepared for</h5>
+        <p class='header__text_content'>Customer Names</p>
+      </div>
+      <div class='header_text_wrap_block'>
+        <h5 class='header__text_capitals'>Prepared for</h5>
+        <p class='header__text_content'>Jun 06, 20XX</p>
+      </div>
+      <div class='header_text_wrap_block'>
+        <h5 class='header__text_capitals'>Prepared for</h5>
+        <p class='header__text_content'>Aug 06, 20XX</p>
+      </div>
+    </div>
+  </div>
+
+  <div class='title_block'>
+    <h2 class='title_block__title'>Wedding Quote</h2>
+    <p class='title_block__quote'>Quote #0135</p>
+  </div>
+
+  <div class='event_info'>
+    <div>
+      <h5 class='event_info__title'>Event Date:</h5>
+      <p class='event_info__text'>Monday 25 April 2026</p>
+    </div>
+
+    <div>
+      <h5 class='event_info__title'>Number of Guests:</h5>
+      <ul class='event_info__list'>
+        <li>Day: XXX</li>
+        <li>Evening: XXX</li>
+      </ul>
+    </div>
+  </div>
+
+  <table class='table'>
+    <thead class='table__head'>
+      <tr>
+        <th scope='col' class='table-head-ceil'>Item</th>
+        <th scope='col' class='table-head-ceil text_center'>QTY</th>
+        <th scope='col' class='table-head-ceil text_center'>Price</th>
+        <th scope='col' class='table-head-ceil text_center'>Total</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_text'>Classic Wedding Package:</p>
+          <ul class='table__tbody_ceil_list'>
+            <li>Exclusive use of the venue and grounds.</li>
+            <li>Civil ceremony.</li>
+            <li>One reception drink per person.</li>
+            <li>A sumptuous three course wedding breakfast with coffee,
+              carefully prepared and served by our expert catering team.</li>
+            <li>Half a bottle of house wine per person during the wedding
+              breakfast.</li>
+            <li>One glass of sparkling wine per person for the toast.</li>
+            <li>VIP access to wedding inspiration days throughout the year.</li>
+            <li>Professional DJ and disco lighting.</li>
+            <li>An enticing evening buffet.</li>
+            <li>Experienced wedding coordinator and duty manager</li>
+            <li>Guidance for booking the ceremony itself with Maidstone Register
+              Office.</li>
+            <li>Exclusive use of the on-site dressing room from 9am until
+              midnight.</li>
+            <li>Bespoke room plan to assist you in arranging your final table
+              plan.</li>
+            <li>Use of a private room prior to the ceremony to speak with the
+              registrars.</li>
+            <li>Table number and name holders.</li>
+            <li>Personalised post box for your wedding cards.</li>
+            <li>Easel and frame for displaying your table plan.</li>
+            <li>An elegant cake stand and knife.</li>
+            <li>Exclusive discounts with local hotel partners.</li>
+            <li>Ample free parking for guests.</li>
+          </ul>
+        </td>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_num'>1</p>
+        </td>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_num'>£15,000</p>
+        </td>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_num'>£15,000</p>
+        </td>
+      </tr>
+      <tr>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_text'>Additional Services as follows:</p>
+          <ul class='table__tbody_ceil_list'>
+            <li>Prosecco bike (£150)</li>
+            <li>Garden games (£100)</li>
+          </ul>
+        </td>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_num'>-</p>
+        </td>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_num'></p>
+        </td>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_num'>£250</p>
+        </td>
+      </tr>
+      <tr>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_text'>Price Reductions as follows:</p>
+          <ul class='table__tbody_ceil_list'>
+            <li>Spring special offer (-£1,000)</li>
+          </ul>
+        </td>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_num'></p>
+        </td>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_num'></p>
+        </td>
+        <td class='table__tbody_ceil'>
+          <p class='table__tbody_ceil_num'>£-1,000</p>
+        </td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td class='table__tfooter_ceil'></td>
+        <td class='table__tfooter_ceil'></td>
+        <td class='table__tfooter_ceil'></td>
+        <td class='table__tfooter_ceil'>£14,250</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class='notes_block'>
+    <p class='notes_block__text'>Notes:</p>
+
+    <p class='notes_block__text'>The couple would like to ensure that the
+      weather is nice, the temperature is 24C and that everyone has a good time!</p>
+
+    <p class='notes_block__text'>They would also like to ensure that car parking
+      spaces are reserved for Mr and Mrs Smith, Mr and Mrs Williams and for
+      their own vehicle.</p>
+  </div>
+
+  <div class='venue_info'>
+    <p class='venue_info__address'>The Orangery, Turkey Court, Turkey Mill,
+      Ashford Road, Maidstone, ME14 5PP</p>
+    <p class='venue_info__email'>orangery@glowevents.co.uk</p>
+    <p class='venue_info__phone'>01622 919919</p>
+  </div>
+</main>

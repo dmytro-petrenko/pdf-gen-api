@@ -1,5 +1,4 @@
 const handlebars = require('express-handlebars');
-// const dotenv = require('dotenv');
 const cors = require('cors');
 const express = require('express');
 const path = require('path');
@@ -36,11 +35,11 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
-// app.get('/', (req, res) => {
-//   res.render('gardens-quote');
-// });
+app.get('/', (req, res) => {
+  res.render('gardens-quote');
+});
 
 app.use('/pdf-generation', pdfGenRoutes);
 
