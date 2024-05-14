@@ -5,7 +5,8 @@
     <image
       class='header__logo_image'
       {{! src='/images/the gardens logo.png' }}
-      src='/images/the gardens logo.png'
+      {{! src='http://localhost:4000/images/the gardens logo.png' }}
+      src={{imgSource}}
       alt='The gardens logo'
     />
     <div class='header__text_block'>
@@ -129,7 +130,7 @@
           <p class='table__tbody_ceil_num'></p>
         </td>
         <td class='table__tbody_ceil'>
-          <p class='table__tbody_ceil_num'>£-1,000</p>
+          <p class='table__tbody_ceil_num'>-£1,000</p>
         </td>
       </tr>
     </tbody>

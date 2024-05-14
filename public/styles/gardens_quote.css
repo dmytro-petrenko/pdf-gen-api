@@ -6,222 +6,248 @@
 }
 
 .layout__block {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    width: 80%;
-    padding: 140px 0;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  padding: 50px 0 0;
 }
 .header__block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 .header__logo_image {
-    width: 350px;
-    aspect-ratio: 277 / 100;
+  /* width: 350px; */
+  width: 200px;
+  aspect-ratio: 277 / 100;
 }
 .header__text_block {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    position: relative;
-    width: 350px;
-    height: auto;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  /* width: 350px; */
+  width: 200px;
+  height: auto;
+  margin-top: 20px;
 }
 
 .header_text_wrap_block {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    position: relative;
-    width: 100%;
-    margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .header__text_capitals {
-    font-family: Georgia;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.2;
-    text-transform: uppercase;
-    margin: 0;
+  font-family: Georgia;
+  /* font-size: 24px; */
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .header__text_content {
-    font-family: Georgia;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.2;
-    margin: 0;
+  font-family: Georgia;
+  /* font-size: 24px; */
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .title_block {
-    display: block;
-    position: relative;
-    width: 100%;
-    padding-left: 20px;
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-left: 20px;
 }
 .title_block__title {
-    font-family: Georgia;
-    font-size: 54px;
-    font-weight: 600;
-    line-height: 1.5;
-    text-transform: capitalize;
-    color: rgb(179, 162, 153);
-    margin-top: 30px;
-    margin-bottom: 0px;
+  font-family: Georgia;
+  /* font-size: 54px; */
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: capitalize;
+  color: rgb(179, 162, 153);
+  margin-top: 30px;
+  margin-bottom: 0px;
 }
 
 .title_block__quote {
-    font-family: Georgia;
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 1.0;
-    color: rgb(179, 162, 153);
-    margin: 0;
+  font-family: Georgia;
+  /* font-size: 32px; */
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  color: rgb(179, 162, 153);
+  margin: 0;
 }
 .event_info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 30px;
-    position: relative;
-    width: 100%;
-    margin-top: 30px;
-    padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  padding-left: 20px;
 }
 
 .event_info__title {
-    font-family: Georgia;
-    font-size: 26px;
-    font-weight: 600;
-    line-height: 1;
-    text-transform: capitalize;
-    color: rgb(0, 0, 0);
-    margin: 0;
+  font-family: Georgia;
+  /* font-size: 26px; */
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: capitalize;
+  color: rgb(0, 0, 0);
+  margin: 0;
 }
 
 .event_info__text {
-    font-family: Georgia;
-    font-size: 26px;
-    font-weight: 400;
-    margin: 0;
+  font-family: Georgia;
+  /* font-size: 26px; */
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .event_info__list {
-    margin: 0;
+  margin: 0;
 
-    li {
-        font-family: Georgia;
-        font-size: 26px;
-        font-weight: 400;
-    }
+  li {
+    font-family: Georgia;
+    /* font-size: 26px; */
+    font-size: 15px;
+    font-weight: 400;
+  }
 }
 .table {
-    display: inline-table;
-    margin-top: 40px;
-    width: 100%;
-    border-spacing: 0px;
-    border: 1px solid rgb(230, 230, 230);
+  /* display: inline-table; */
+  table-layout: auto;
+  margin-top: 20px;
+  width: 100%;
+  border-spacing: 0px;
+  border: 1px solid rgb(230, 230, 230);
+  border-collapse: collapse;
 }
 .table__head {
-    height: 60px;
-    width: 100%;
+  height: 60px;
+  width: 100%;
 }
 
 .table-head-ceil {
-    background-color: rgb(179, 162, 153);
-    text-align: left;
-    padding: 15px;
-    text-transform: uppercase;
-    border: 1px solid rgb(230, 230, 230);
-    font-family: Georgia;
-    font-weight: 600;
-    font-size: 22px;
+  background-color: rgb(179, 162, 153);
+  text-align: left;
+  padding: 15px;
+  text-transform: uppercase;
+  border: 1px solid rgb(230, 230, 230);
+  font-family: Georgia;
+  font-weight: 600;
+  /* font-size: 22px; */
+  font-size: 12px;
 }
 .text_center {
-    text-align: center;
+  text-align: center;
 }
-
 
 .table__tbody_ceil {
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(230, 230, 230);
-    text-align: left;
-    padding: 15px;
-    font-family: Georgia;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(230, 230, 230);
+  text-align: left;
+  padding: 15px;
+  font-family: Georgia;
 }
+
+.centered_content {
+  display: table-cell;
+  vertical-align: middle;
+  /* height: 100px; */
+}
+
 .table__tbody_ceil_text {
-    color: rgb(102, 102, 102);
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 1.2;
-    margin: 0;
+  color: rgb(102, 102, 102);
+  font-weight: 400;
+  /* font-size: 26px; */
+  font-size: 15px;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .table__tbody_ceil_list {
-    color: rgb(102, 102, 102);
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 1.2;
-    padding-left: 60px;
+  color: rgb(102, 102, 102);
+  font-weight: 400;
+  /* font-size: 26px; */
+  font-size: 15px;
+  line-height: 1.2;
+  padding-left: 60px;
+  margin: 15px 0 0;
 }
 
 .table__tbody_ceil_num {
-    color: rgb(102, 102, 102);
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 1.2;
-    margin: 0;
-    text-align: center;
+  color: rgb(102, 102, 102);
+  font-weight: 400;
+  /* font-size: 26px; */
+  font-size: 15px;
+  line-height: 1.2;
+  margin: auto 0;
+  text-align: center;
+  /* height: 100%; */
 }
 
 .table__tfooter_ceil {
-    font-family: Georgia;
-    font-size: 26px;
-    font-weight: 400;
-    line-height: 1.2;
-    padding: 15px;
-    background-color: rgb(230, 230, 230);
-    border: 1px solid rgb(230, 230, 230);
-    height: 100px;
+  font-family: Georgia;
+  /* font-size: 26px; */
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 15px;
+  background-color: rgb(230, 230, 230);
+  border: 1px solid rgb(230, 230, 230);
+  height: 60px;
 }
 
 .notes_block {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 40px;
-    padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 40px;
+  padding: 0 30px;
 }
 
 .notes_block__text {
-    font-family: Georgia;
-    font-size: 26px;
-    font-weight: 400;
-    line-height: 1.2;
-    color: rgb(102, 102, 102);
+  font-family: Georgia;
+  /* font-size: 26px; */
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: rgb(102, 102, 102);
 }
 
 .venue_info {
-    display: block;
-    position: relative;
-    margin-top: 250px;
+  display: block;
+  position: relative;
+  margin-top: 180px;
 
-    p {
-        font-family: Georgia;
-        font-size: 26px;
-        font-weight: 400;
-        line-height: 1.2;
-        color: rgb(0, 0, 0);
-        margin: 0;
-        text-align: center;
-    }
+  p {
+    font-family: Georgia;
+    /* font-size: 26px; */
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    text-align: center;
+  }
 }
