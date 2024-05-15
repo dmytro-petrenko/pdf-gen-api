@@ -5,12 +5,25 @@ const path = require('path');
 
 exports.pdfGeneration = async (req, res) => {
   try {
+    let logoImg;
+    switch (req.body.wedding_venue) {
+      case 'the-gardens':
+        logoImg = 'the gardens logo.png';
+        break;
+      case 'the-castle-westenhanger':
+        logoImg = 'the castle west logo.png';
+        break;
+      case 'the-orangery':
+        logoImg = 'the orangery logo.png';
+        break;
+    }
     const imagePath = path.join(
       __dirname,
       '..',
       'public',
       'images',
-      'the gardens logo.png'
+      // 'the orangery logo.png'
+      logoImg
     );
 
     function base64_encode(file) {
@@ -83,7 +96,7 @@ exports.pdfGeneration = async (req, res) => {
     const tempHtml =
       '<html><body><h1 style="color:blue;font-size:46px;">Test</h1></body></html>';
 
-    const pdfBuffer = await genPdfFunc(fileHTML);
+    const pdfBuffer = await genPdfFunc(fileHTML, req.body.wedding_venue);
 
     res.set({
       'Content-Type': 'application/pdf',

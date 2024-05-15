@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 require('dotenv').config();
 
-module.exports = async function genPdfFunc(html) {
+module.exports = async function genPdfFunc(html, weddingVenue) {
   try {
     const browser = await puppeteer.launch({
       args: [
@@ -26,6 +26,18 @@ module.exports = async function genPdfFunc(html) {
     );
     await page.addStyleTag({ path: './public/styles/fonts.css' });
     await page.addStyleTag({ path: './public/styles/gardens_quote.css' });
+
+    switch (weddingVenue) {
+      case 'the-gardens':
+        await page.addStyleTag({ path: './public/styles/gardens_quote.css' });
+        break;
+      case 'the-castle-westenhanger':
+        await page.addStyleTag({ path: './public/styles/castle_west_quote.css' });
+        break;
+      case 'the-orangery':
+        await page.addStyleTag({ path: './public/styles/orangery_quote.css' });
+        break;
+    }
 
     await page.emulateMediaType('screen');
 
