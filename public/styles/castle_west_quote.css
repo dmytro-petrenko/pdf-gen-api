@@ -70,7 +70,7 @@
   font-weight: 600;
   line-height: 1.5;
   text-transform: capitalize;
-  color: rgb(179, 162, 153);
+  color: rgb(137, 169, 184);
   margin-top: 30px;
   margin-bottom: 0px;
 }
@@ -81,7 +81,7 @@
   font-size: 22px;
   font-weight: 400;
   line-height: 1;
-  color: rgb(179, 162, 153);
+  color: rgb(137, 169, 184);
   margin: 0;
 }
 .event_info {
@@ -140,7 +140,7 @@
 }
 
 .table-head-ceil {
-  background-color: rgb(179, 162, 153);
+  background-color: rgb(137, 169, 184);
   text-align: left;
   padding: 15px;
   text-transform: uppercase;
@@ -169,7 +169,8 @@
 }
 
 .table__tbody_ceil_text {
-  color: rgb(102, 102, 102);
+  /* color: rgb(102, 102, 102); */
+  color: rgb(0, 0, 0);
   font-weight: 400;
   /* font-size: 26px; */
   font-size: 15px;
@@ -178,7 +179,8 @@
 }
 
 .table__tbody_ceil_list {
-  color: rgb(102, 102, 102);
+  /* color: rgb(102, 102, 102); */
+  color: rgb(0, 0, 0);
   font-weight: 400;
   /* font-size: 26px; */
   font-size: 15px;
@@ -188,7 +190,8 @@
 }
 
 .table__tbody_ceil_num {
-  color: rgb(102, 102, 102);
+  /* color: rgb(102, 102, 102); */
+  color: rgb(0, 0, 0);
   font-weight: 400;
   /* font-size: 26px; */
   font-size: 15px;
@@ -219,13 +222,22 @@
   padding: 0 30px;
 }
 
+.notes_block__title,
 .notes_block__text {
   font-family: Georgia;
   /* font-size: 26px; */
   font-size: 15px;
-  font-weight: 400;
   line-height: 1.2;
-  color: rgb(102, 102, 102);
+  /* color: rgb(102, 102, 102); */
+  color: rgb(0, 0, 0);
+}
+
+.notes_block__title {
+  font-weight: 600;
+}
+
+.notes_block__text {
+  font-weight: 400;
 }
 
 .venue_info {

@@ -169,7 +169,7 @@
 }
 
 .table__tbody_ceil_text {
-  color: rgb(102, 102, 102);
+  color: rgb(0, 0, 0);
   font-weight: 400;
   /* font-size: 26px; */
   font-size: 15px;
@@ -178,7 +178,7 @@
 }
 
 .table__tbody_ceil_list {
-  color: rgb(102, 102, 102);
+  color: rgb(0, 0, 0);
   font-weight: 400;
   /* font-size: 26px; */
   font-size: 15px;
@@ -188,7 +188,7 @@
 }
 
 .table__tbody_ceil_num {
-  color: rgb(102, 102, 102);
+  color: rgb(0, 0, 0);
   font-weight: 400;
   /* font-size: 26px; */
   font-size: 15px;
@@ -219,13 +219,22 @@
   padding: 0 30px;
 }
 
+.notes_block__title,
 .notes_block__text {
   font-family: Georgia;
   /* font-size: 26px; */
   font-size: 15px;
-  font-weight: 400;
   line-height: 1.2;
-  color: rgb(102, 102, 102);
+  /* color: rgb(102, 102, 102); */
+  color: rgb(0, 0, 0);
+}
+
+.notes_block__title {
+  font-weight: 600;
+}
+
+.notes_block__text {
+  font-weight: 400;
 }
 
 .venue_info {
