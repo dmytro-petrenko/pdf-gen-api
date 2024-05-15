@@ -12,35 +12,39 @@
     <div class='header__text_block'>
       <div class='header_text_wrap_block'>
         <h5 class='header__text_capitals'>Prepared for</h5>
-        <p class='header__text_content'>Customer Names</p>
+        {{! <p class='header__text_content'>Customer Names</p> }}
+        <p class='header__text_content'>{{{couple_name}}}</p>
       </div>
       <div class='header_text_wrap_block'>
-        <h5 class='header__text_capitals'>Prepared for</h5>
-        <p class='header__text_content'>Jun 06, 20XX</p>
+        <h5 class='header__text_capitals'>Prepared date</h5>
+        {{! <p class='header__text_content'>Jun 06, 20XX</p> }}
+        <p class='header__text_content'>{{{quote_date}}}</p>
       </div>
       <div class='header_text_wrap_block'>
-        <h5 class='header__text_capitals'>Prepared for</h5>
-        <p class='header__text_content'>Aug 06, 20XX</p>
+        <h5 class='header__text_capitals'>Expiry date</h5>
+        {{! <p class='header__text_content'>Aug 06, 20XX</p> }}
+        <p class='header__text_content'>{{{quotation_valid_to}}}</p>
       </div>
     </div>
   </div>
 
   <div class='title_block'>
     <h2 class='title_block__title'>Wedding Quote</h2>
-    <p class='title_block__quote'>Quote #0135</p>
+    <p class='title_block__quote'>Quote #{{{quotation_reference}}}</p>
   </div>
 
   <div class='event_info'>
     <div>
       <h5 class='event_info__title'>Event Date:</h5>
-      <p class='event_info__text'>Monday 25 April 2026</p>
+      {{! <p class='event_info__text'>Monday 25 April 2026</p> }}
+      <p class='event_info__text'>{{{wedding_date}}}</p>
     </div>
 
     <div>
       <h5 class='event_info__title'>Number of Guests:</h5>
       <ul class='event_info__list'>
-        <li>Day: XXX</li>
-        <li>Evening: XXX</li>
+        <li>Day: {{{day_guests}}}</li>
+        <li>Evening: {{{evening_guests}}}</li>
       </ul>
     </div>
   </div>
@@ -92,47 +96,67 @@
           <p class='table__tbody_ceil_num'>1</p>
         </td>
         <td class='table__tbody_ceil'>
-          <p class='table__tbody_ceil_num'>£15,000</p>
+          <p class='table__tbody_ceil_num'>£{{{wedding_base_price}}}</p>
         </td>
         <td class='table__tbody_ceil'>
-          <p class='table__tbody_ceil_num'>£15,000</p>
+          <p class='table__tbody_ceil_num'>£{{{wedding_base_price}}}</p>
         </td>
       </tr>
-      <tr>
-        <td class='table__tbody_ceil'>
-          <p class='table__tbody_ceil_text'>Additional Services as follows:</p>
-          <ul class='table__tbody_ceil_list'>
+      {{#if isActAddServDet}}
+        <tr>
+          <td class='table__tbody_ceil'>
+            {{! <p class='table__tbody_ceil_text'>Additional Services as follows:</p> }}
+            <p
+              class='table__tbody_ceil_text'
+            >{{{addit_serv_details.firstSentence}}}</p>
+            {{! <ul class='table__tbody_ceil_list'>
             <li>Prosecco bike (£150)</li>
             <li>Garden games (£100)</li>
-          </ul>
-        </td>
-        <td class='table__tbody_ceil'>
-          <p class='table__tbody_ceil_num'>-</p>
-        </td>
-        <td class='table__tbody_ceil'>
-          <p class='table__tbody_ceil_num'></p>
-        </td>
-        <td class='table__tbody_ceil'>
-          <p class='table__tbody_ceil_num'>£250</p>
-        </td>
-      </tr>
-      <tr>
-        <td class='table__tbody_ceil'>
-          <p class='table__tbody_ceil_text'>Price Reductions as follows:</p>
-          <ul class='table__tbody_ceil_list'>
+          </ul> }}
+            <ul class='table__tbody_ceil_list'>
+              {{#each addit_serv_details.otherSentnce}}
+                <li>{{{this}}}</li>
+              {{/each}}
+            </ul>
+          </td>
+          <td class='table__tbody_ceil'>
+            <p class='table__tbody_ceil_num'>-</p>
+          </td>
+          <td class='table__tbody_ceil'>
+            <p class='table__tbody_ceil_num'></p>
+          </td>
+          <td class='table__tbody_ceil'>
+            <p class='table__tbody_ceil_num'>£{{{price_addit_services}}}</p>
+          </td>
+        </tr>
+      {{/if}}
+      {{#if isActPriceReducDet}}
+        <tr>
+          <td class='table__tbody_ceil'>
+            {{! <p class='table__tbody_ceil_text'>Price Reductions as follows:</p> }}
+            <p
+              class='table__tbody_ceil_text'
+            >{{{price_reduc_details.firstSentence}}}</p>
+            {{! <ul class='table__tbody_ceil_list'>
             <li>Spring special offer (-£1,000)</li>
-          </ul>
-        </td>
-        <td class='table__tbody_ceil'>
-          <p class='table__tbody_ceil_num'></p>
-        </td>
-        <td class='table__tbody_ceil'>
-          <p class='table__tbody_ceil_num'></p>
-        </td>
-        <td class='table__tbody_ceil'>
-          <p class='table__tbody_ceil_num'>-£1,000</p>
-        </td>
-      </tr>
+          </ul> }}
+            <ul class='table__tbody_ceil_list'>
+              {{#each price_reduc_details.otherSentnce}}
+                <li>{{{this}}}</li>
+              {{/each}}
+            </ul>
+          </td>
+          <td class='table__tbody_ceil'>
+            <p class='table__tbody_ceil_num'></p>
+          </td>
+          <td class='table__tbody_ceil'>
+            <p class='table__tbody_ceil_num'></p>
+          </td>
+          <td class='table__tbody_ceil'>
+            <p class='table__tbody_ceil_num'>-£{{{price_reduction}}}</p>
+          </td>
+        </tr>
+      {{/if}}
     </tbody>
 
     <tfoot>
@@ -140,7 +164,7 @@
         <td class='table__tfooter_ceil'></td>
         <td class='table__tfooter_ceil'></td>
         <td class='table__tfooter_ceil'></td>
-        <td class='table__tfooter_ceil'>£14,250</td>
+        <td class='table__tfooter_ceil'>£{{{total_price}}}</td>
       </tr>
     </tfoot>
   </table>

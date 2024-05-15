@@ -5,7 +5,7 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(pdfGenController.pdfGeneration)
+  // .get(pdfGenController.pdfGeneration)
   .post(pdfGenController.pdfGeneration);
 
 module.exports = router;

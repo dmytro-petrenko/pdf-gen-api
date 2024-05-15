@@ -1,6 +1,7 @@
 const handlebars = require('express-handlebars');
 const cors = require('cors');
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 const pdfGenRoutes = require('./routes/pdfGenRoutes');
 
@@ -11,6 +12,8 @@ process.on('uncaughtException', (err) => {
 });
 
 const app = express();
+
+const jsonParser = bodyParser.json();
 
 const whitelist = ['https://www.glowevents.co.uk', 'http://localhost:3000'];
 
@@ -36,6 +39,10 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, '/public')));
+
+app.use(jsonParser);
+
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   res.render('gardens-quote');
