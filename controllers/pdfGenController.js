@@ -37,7 +37,10 @@ exports.pdfGeneration = async (req, res) => {
 
     const additServDetailsArray = req.body.addit_serv_details.split('\n');
     const priceReducDetailsArray = req.body.price_reduc_details.split('\n');
-    const notesArray = req.body.notes.split('\n');
+    const notesArray = req.body.notes
+      .split('\n')
+      .filter((item) => item.length !== 0);
+    // console.log('notesArray: ', notesArray);
 
     let isActiveAddServDet;
     if (
