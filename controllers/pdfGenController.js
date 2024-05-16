@@ -37,8 +37,8 @@ exports.pdfGeneration = async (req, res) => {
 
     const additServDetailsArray = req.body.addit_serv_details.split('\n');
     const priceReducDetailsArray = req.body.price_reduc_details.split('\n');
-    const notesArray = req.body.notes.split('\r\n');
-    
+    const notesArray = req.body.notes.split('\n');
+
     let isActiveAddServDet;
     if (
       additServDetailsArray.length === 1 &&
