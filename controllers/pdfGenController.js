@@ -37,7 +37,8 @@ exports.pdfGeneration = async (req, res) => {
 
     const additServDetailsArray = req.body.addit_serv_details.split('\n');
     const priceReducDetailsArray = req.body.price_reduc_details.split('\n');
-
+    const notesArray = req.body.notes.split('\r\n');
+    
     let isActiveAddServDet;
     if (
       additServDetailsArray.length === 1 &&
@@ -57,6 +58,7 @@ exports.pdfGeneration = async (req, res) => {
     } else {
       isActivePriceReducDet = true;
     }
+
     let calcTotalPrice, calcPriceReduction, calcPriceAdditServices;
     calcPriceReduction = isActivePriceReducDet ? req.body.price_reduction : 0;
     calcPriceAdditServices = isActiveAddServDet
@@ -64,6 +66,13 @@ exports.pdfGeneration = async (req, res) => {
       : 0;
     calcTotalPrice =
       req.body.wedding_base_price + calcPriceAdditServices - calcPriceReduction;
+
+    let isActiveNotes;
+    if (notesArray.length === 1 && notesArray[0].length < 1) {
+      isActiveNotes = false;
+    } else {
+      isActiveNotes = true;
+    }
 
     const pageDir = path.join(__dirname, '..', 'views', 'gardens-quote.hbs');
     const file = fs.readFileSync(pageDir, 'utf-8');
@@ -89,8 +98,10 @@ exports.pdfGeneration = async (req, res) => {
       quotation_valid_to: req.body.quotation_valid_to,
       day_guests: req.body.day_guests,
       evening_guests: req.body.evening_guests,
+      notes: notesArray,
       isActAddServDet: isActiveAddServDet,
       isActPriceReducDet: isActivePriceReducDet,
+      isActNotes: isActiveNotes,
     });
 
     const tempHtml =

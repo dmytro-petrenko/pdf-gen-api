@@ -168,17 +168,22 @@
       </tr>
     </tfoot>
   </table>
+  {{#if isActNotes}}
+    <div class='notes_block'>
+      <p class='notes_block__title'>Notes:</p>
 
-  <div class='notes_block'>
-    <p class='notes_block__title'>Notes:</p>
+      {{! <p class='notes_block__text'>The couple would like to ensure that the
+        weather is nice, the temperature is 24C and that everyone has a good
+        time!</p>
 
-    <p class='notes_block__text'>The couple would like to ensure that the
-      weather is nice, the temperature is 24C and that everyone has a good time!</p>
-
-    <p class='notes_block__text'>They would also like to ensure that car parking
-      spaces are reserved for Mr and Mrs Smith, Mr and Mrs Williams and for
-      their own vehicle.</p>
-  </div>
+      <p class='notes_block__text'>They would also like to ensure that car
+        parking spaces are reserved for Mr and Mrs Smith, Mr and Mrs Williams
+        and for their own vehicle.</p> }}
+      {{#each notes}}
+        <p>{{{this}}}</p>
+      {{/each}}
+    </div>
+  {{/if}}
 
   <div class='venue_info'>
     <p class='venue_info__address'>The Orangery, Turkey Court, Turkey Mill,
