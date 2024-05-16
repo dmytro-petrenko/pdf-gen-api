@@ -40,7 +40,7 @@ exports.pdfGeneration = async (req, res) => {
     const notesArray = req.body.notes
       .split('\n')
       .filter((item) => item.length !== 0);
-    // console.log('notesArray: ', notesArray);
+    // console.log('notesArray: ', notesArray.length);
 
     let isActiveAddServDet;
     if (
@@ -71,7 +71,10 @@ exports.pdfGeneration = async (req, res) => {
       req.body.wedding_base_price + calcPriceAdditServices - calcPriceReduction;
 
     let isActiveNotes;
-    if (notesArray.length === 1 && notesArray[0].length < 1) {
+    if (
+      notesArray.length === 0 ||
+      (notesArray.length === 1 && notesArray[0].length < 1)
+    ) {
       isActiveNotes = false;
     } else {
       isActiveNotes = true;
