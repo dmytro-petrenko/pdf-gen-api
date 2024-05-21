@@ -28,10 +28,10 @@
     </div>
   </div>
 
-  <div class='title_block'>
+  {{!-- <div class='title_block'>
     <h2 class='title_block__title'>Wedding Quote</h2>
     <p class='title_block__quote'>Quote #{{{quotation_reference}}}</p>
-  </div>
+  </div> --}}
 
   <div class='event_info'>
     <div>
@@ -185,10 +185,28 @@
     </div>
   {{/if}}
 
-  <div class='venue_info'>
-    <p class='venue_info__address'>The Orangery, Turkey Court, Turkey Mill,
-      Ashford Road, Maidstone, ME14 5PP</p>
-    <p class='venue_info__email'>orangery@glowevents.co.uk</p>
-    <p class='venue_info__phone'>01622 919919</p>
-  </div>
+  {{#if (isGardens wedding_venue)}}
+    <div class='venue_info'>
+      <p class='venue_info__address'>The Gardens, Benover Road, Yalding, Maidstone, Kent, ME18 6EX.</p>
+      <p class='venue_info__email'>gardens@glowevents.co.uk</p>
+      <p class='venue_info__phone'>01622 814650</p>
+    </div>
+  {{/if}}
+
+  {{#if (isCastleWest wedding_venue)}}
+    <div class='venue_info'>
+      <p class='venue_info__address'>The Castle Westenhanger, Stone Street, Westenhanger, Hythe, Kent, CT21 4HX.</p>
+      <p class='venue_info__email'>castle@glowevents.co.uk</p>
+      <p class='venue_info__phone'>01303 261068</p>
+    </div>
+  {{/if}}
+
+  {{#if (isOrangery wedding_venue)}}
+    <div class='venue_info'>
+      <p class='venue_info__address'>The Orangery, Turkey Court, Turkey Mill,
+        Ashford Road, Maidstone, ME14 5PP</p>
+      <p class='venue_info__email'>orangery@glowevents.co.uk</p>
+      <p class='venue_info__phone'>01622 919919</p>
+    </div>
+  {{/if}}
 </main>

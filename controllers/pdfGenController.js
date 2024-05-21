@@ -80,6 +80,18 @@ exports.pdfGeneration = async (req, res) => {
       isActiveNotes = true;
     }
 
+    handlebars.registerHelper('isGardens', function (venue) {
+      return venue === 'the-gardens';
+    });
+
+    handlebars.registerHelper('isCastleWest', function (venue) {
+      return venue === 'the-castle-westenhanger';
+    });
+
+    handlebars.registerHelper('isOrangery', function (venue) {
+      return venue === 'the-orangery';
+    });
+
     const pageDir = path.join(__dirname, '..', 'views', 'gardens-quote.hbs');
     const file = fs.readFileSync(pageDir, 'utf-8');
     const fileCompiled = handlebars.compile(file);
@@ -99,7 +111,7 @@ exports.pdfGeneration = async (req, res) => {
         firstSentence: additServDetailsArray[0],
         otherSentnce: additServDetailsArray.slice(1),
       },
-      quotation_reference: req.body.quotation_reference,
+      // quotation_reference: req.body.quotation_reference,
       quote_date: req.body.quote_date,
       quotation_valid_to: req.body.quotation_valid_to,
       day_guests: req.body.day_guests,
@@ -108,6 +120,7 @@ exports.pdfGeneration = async (req, res) => {
       isActAddServDet: isActiveAddServDet,
       isActPriceReducDet: isActivePriceReducDet,
       isActNotes: isActiveNotes,
+      wedding_venue: req.body.wedding_venue,
     });
 
     const tempHtml =
